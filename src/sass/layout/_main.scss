@@ -1,0 +1,112 @@
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    @include breakpoint(tablet){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 52px;
+        margin-top: 52px;
+        @include breakpoint(desktop){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+    }
+
+    .skill{
+        text-align: center;
+        @include breakpoint(tablet){
+            text-align: start;
+        }
+    }
+
+    .skill-title{
+        font-size: 32px;
+        font-weight: 500;
+        @include breakpoint(tablet){
+            font-size: 48px;
+            margin-bottom:14px;
+        }
+    }
+
+    .skill-duration{
+        color: $color-gray-light;
+        font-weight: 200;
+        @include breakpoint(tablet){
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+.projects-container{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @include breakpoint(tablet){
+        margin-top: 40px;
+    }
+
+    .container-title-button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        h2{
+            font-size: 40px;
+            @include breakpoint(tablet){
+                font-size: 72px;
+            }
+        }
+    }
+}
+
+.container-article{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include breakpoint(tablet){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 22px;
+        row-gap: 60px;
+        @include breakpoint(tablethorizontal){
+            column-gap: 30px;
+            @include breakpoint(desktopxl){
+                column-gap: 40px;
+            }
+        }
+    }
+
+    figure{
+        margin-bottom:20px ;
+        
+    }
+
+    .project-title{
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .project-skills{
+        display: flex;
+        gap: 18px;
+        margin-bottom: 20px;
+
+        .project-paragraph{
+            font-size: 18px;
+            font-weight: 200;
+            color: $color-gray-light;
+        }
+    }
+
+    .project-buttons{
+        display: flex;
+        gap:30px;
+    }
+}

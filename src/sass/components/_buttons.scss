@@ -1,0 +1,119 @@
+.button{
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 500;
+    position: relative;
+    letter-spacing: 2.29px;
+}
+
+.button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    width: 100%;
+    height: 2px;
+    background-color: $color-green;
+    transition: background-color 0.3s;
+
+}
+
+.button:hover {
+    color: $color-green; /* Cambia el color del texto al pasar el ratón por encima */
+}
+
+
+//EFECTO EN LAS IMAGENES DESKTOP PARA QUE APAREZCAN LOS BOTONES DENTRO
+
+
+@include breakpoint(desktop) {
+    .project-item {
+        position: relative;
+
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Asegurar que el overlay no se desborde */
+            display: block;
+            width: 100%;
+
+            &:hover::after {
+                opacity: 0.7; /* Reducir la opacidad al pasar el ratón */
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                opacity: 0; /* Inicialmente oculto */
+                transition: opacity 0.3s ease; /* Animación de transición */
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; /* Inicialmente oculto */
+            transition: opacity 0.3s ease; /* Animación de transición */
+        }
+
+        &:hover .overlay {
+            display: flex;
+            opacity: 1; /* Mostrar el overlay al pasar el ratón */
+        }
+
+        &:hover .image-container::after {
+            opacity: 1; /* Mostrar el overlay al pasar el ratón */
+        }
+    }
+
+    .project-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button {
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 500;
+        position: relative;
+        letter-spacing: 2.29px;
+        margin-bottom: 10px; /* Espacio entre los botones */
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -11px;
+            width: 100%;
+            height: 2px;
+            background-color: $color-green;
+            transition: background-color 0.3s;
+        }
+
+        &:hover {
+            color: $color-green; /* Cambia el color del texto al pasar el ratón por encima */
+
+            &::after {
+                background-color: $color-green; /* Cambia el color del subrayado al pasar el ratón */
+            }
+        }
+    }
+}

@@ -1,0 +1,194 @@
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+//Decoraciones header
+.decorative-image-movile {
+    position: absolute;
+    top: 30%;
+    left: -30px; 
+    z-index: -2;
+    /* Otros estilos según sea necesario, como tama{ño, sombra, etc. */
+    @include breakpoint(tablet){
+        display: none;
+    }
+}
+
+.decorative-image-table{
+    display: none;
+    @include breakpoint(tablet){
+        display: inline-block;
+        position: absolute;
+        top: 19%;
+        left: -449px; 
+        @include breakpoint(tablethorizontal){
+            top: 19%;
+            left: -598px;
+        }
+        @include breakpoint(desktop){
+            display: none;
+            
+        }
+    }
+}
+
+.decorative-image-desktop{
+    display: none;
+    @include breakpoint(desktop){
+        display: block;
+        position: absolute;
+        top: 22%;
+        left: -912px;
+        @include breakpoint(desktopxl){
+            top: 22%;
+            left: -1084px;
+        }
+    }
+}
+
+.decorative-image-circle{
+    display: none;
+}
+
+.decorative-image-circle{
+    @include breakpoint(desktop){
+        position: absolute;
+        display:block;
+        top: 616px;
+        left: -127px;
+    }
+    @include breakpoint(desktopxl){
+        top: 812px;
+    }
+}
+
+
+.decorative-image-medio-circle{
+    position: absolute;
+    top: 72%;
+    right: -34px;
+    @include breakpoint(tablet){
+        right: -30px;
+    }
+    @include breakpoint(desktop){
+        display: none;
+    }
+}
+
+
+
+//decoracion en el main
+
+.decorative-image-main{
+    position: absolute;
+    top: -30px;
+    right: -205px;
+    z-index: -1;
+
+    @include breakpoint(tablet){
+        top: -113px;
+        right: -395px;
+
+        @include breakpoint(tablethorizontal){
+            top: -114px;
+            right: -520px;
+
+            @include breakpoint(desktop){
+                display: none;
+            }
+        }
+    }
+}
+
+.decorative-image-main-desktop{
+    display: none;
+    @include breakpoint(desktop){
+        display: block;
+        position: absolute;
+        top: -130px;
+        right: -962px;
+        z-index: -1;
+        @include breakpoint(desktopxl){
+            right: -1161px;
+        }
+    }
+}
+
+
+//Decoracion en el foooter
+
+.decorative-image-movile-footer{
+    position: absolute;
+    top: -241px;
+    left: -14px;
+        @include breakpoint(tablet){
+            left: -28px;
+        }
+        @include breakpoint(desktop){
+            display: none;
+        }
+}
+
+.decorative-image-footer{
+    display: none;
+        @include breakpoint(desktop){
+            display: block;
+            position: absolute;
+            top:-251px;
+            left: -28px;
+        }
+}
+
+
+
+
+
+
+// Decoraciones de las linias divisorias
+
+.divider-line{
+    border: 1px solid $color-gray-light;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+.divider-line-final-skill{
+    border: 1px solid $color-gray-light;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    @include breakpoint(tablet){
+        display: none;
+    }
+
+}
+
+// H! <BR>
+
+h1{
+    br{
+        display: none;
+        
+    }
+}
+
+h1{
+    @include breakpoint(tablet){
+        br{
+            display: inline;
+            @include breakpoint(desktop){
+                display: none;
+            }
+        }
+    }
+}
+
+// HOBER AL PASAR PO LOS ICONOS
+
+
+
+.container-nav-icons a:hover img path {
+    fill: #4ee1a0; /* Cambiamos el color de relleno al pasar el ratón */
+}

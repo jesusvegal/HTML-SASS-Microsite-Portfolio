@@ -1,0 +1,14 @@
+.desktop-image{
+    display: none;
+    @include breakpoint(desktop){
+        display: block;
+        width: 100%;
+    }
+}
+
+.mobile-image{
+    width: 100%;
+    @include breakpoint(desktop){
+        display: none;
+    }
+}

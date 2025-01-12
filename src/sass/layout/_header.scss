@@ -1,0 +1,199 @@
+.container-logo-nav-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(tablet){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    
+}
+
+.logotipo{
+    @include breakpoint(tablet){
+        width:172px ;
+    }
+    @include breakpoint(desktop){
+        width: 200px;
+    }
+}
+
+.container-logo{
+    margin-bottom: 20px;
+
+    @include breakpoint(tablet){
+        margin: 0;
+    }
+}
+
+.container-nav-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 1;
+    @include breakpoint(desktop){
+        gap: 50px;
+    }
+
+   
+
+    @include breakpoint(tablet){
+            img{
+                width: 25px;
+                @include breakpoint(desktop){
+                    width: 40px;
+                }
+            }
+    }
+
+}
+
+.container-photo-h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+
+    @include breakpoint(tablet){
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .container-photo{
+        position: relative;
+        top: -95px;
+        z-index: -1;
+
+        .photo-mobile{
+            width: 60%;
+            display: block;
+            margin: 0 auto;
+
+            @include breakpoint(tablet){
+                display: none;
+            }
+        }
+
+        .photo-tablet,.photo-desktop{
+            display: none;
+            
+        }
+
+        .photo-desktop{
+            @include breakpoint(desktop){
+                display: block;
+                position: relative;
+                width: 121%;
+                right: 65px;
+            }
+        }
+
+        @include breakpoint(tablet){
+            .photo-tablet{
+                display: block;
+                position: relative;
+                width: 121%;
+                top: 0;
+                right: 29px;
+                @include breakpoint(tablethorizontal){
+                    width: 115%;
+                    top: 0;
+                    right: 29px;
+                    @include breakpoint(desktop){
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+.h1-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 24px;
+
+    @include breakpoint(tablet){
+        align-items: flex-start;
+        text-align: start;
+        margin-top: 90px;
+        z-index: 2;
+        @include breakpoint(desktop){
+            margin-top: 180px;
+        }
+    }
+
+
+    h1{
+        color: $color-white;
+        font-size: 40px;
+        @include breakpoint(tablet){
+            font-size: 62px;
+            width: 119%;
+            letter-spacing: 2px;
+            line-height: 72px;
+            margin-bottom: 50px;
+        }
+        @include breakpoint(tablethorizontal){
+            width: 110%;
+        }
+        @include breakpoint(desktop){
+            font-size: 66px;
+            width: 118%;
+        }
+        @include breakpoint(desktopxl){
+            font-size: 80px;
+        }
+    }
+
+    p{
+        font-size: 16px;
+        color: $color-gray-light;
+        font-weight: 100;
+        @include breakpoint(tablet){
+            font-size: 18px;
+            margin-bottom: 34px;
+            @include breakpoint(tablethorizontal){
+                width: 90%;
+                @include breakpoint(desktop){
+                    width: 55%;
+                    @include breakpoint(desktopxl){
+                        font-size: 20px;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.name-with-line {
+    position: relative;
+}
+
+.name-with-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px; /* Ajusta la posición de la línea debajo del nombre */
+    width: 100%; /* Ancho completo */
+    height: 4px; /* Grosor de la línea */
+    background-color:$color-green; /* Color de la línea */
+    @include breakpoint(tablet){
+        height: 6px;
+    }
+}
